@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>OpsTech IT Tags</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    
+
+    </head>
+    <body>
+        <h3>OpsTech IT Damage Tags</h3>
+        <div id="tag">
+            <form id="form">
+                <label for="fAssetTag">Asset Tag: </label><br>
+                <input type="text" id="fAssetTag" name="fAssetTag"><br>
+
+                <label for="fDescription">Damage Description: </label><br>
+                <textarea rows="4" cols="32" id= "fDescription" name="fDescription" form="form"></textarea><br>
+
+                <label for="fNextStep">Next Steps: </label><br>
+                <textarea rows="4" cols="32" id="fNextStep" name="fNextStep" form="form"></textarea><br>
+            
+                <label>Memory wiped? </label>
+                    <input type="checkbox" id="fMemoryYes" name ="fMemoryYes" value="Yes">
+                    <label for="fMemoryYes">Yes</label>
+                    <input type="checkbox" id="fMemoryNo" name ="fMemoryNo" value="No">
+                    <label for="fMemoryNo">No</label>
+                    <input type="checkbox" id="fMemoryNA" name ="fMemoryNA" value="N/A">
+                    <label for="fMemoryNA">N/A</label>
+            </form>
+            <div>
+                <label id="sign"></label><br>
+            </div>
+        </div>
+        <br>
+        <input id = "buttonPrint" type="button" onclick="printForm('tag')" value="Print">
+        
+        <input id = "buttonClear" type="button" onclick="clearForm()" value="Clear">
+
+        <script>
+            runTags();
+        </script>
+
+    </body>
+    </body>
+</html>
