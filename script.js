@@ -19,17 +19,15 @@ function runTags(){
 }
 
 function printForm(toPrint){
-    updateForm();
+    console.log(document.getElementById("fAssetTag").value);
+
     var content = document.getElementById(toPrint).innerHTML;
     var original = document.body.innerHTML;
 
-    document.body.innerHTML = content;
+   // document.body.innerHTML = content;
     window.print();
     document.body.innerHTML = original;
-}
-
-function updateForm(){
-    
+    runTags();
 }
 
 function clearForm(){
