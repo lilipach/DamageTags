@@ -1,52 +1,4 @@
-#tag{
-    margin-top: 20px;
-}
 
-#Tag{
-    display: block;
-}
-
-#buttonPrint{
-    background-color: rgb(40, 40, 122);
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    width: 130px;
-    height: 40px;
-}
-
-#buttonClear{
-    background-color: gray;
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    width: 130px;
-    height: 40px;
-}
-
-#buttonPrint:hover{
-    background-color: white;
-    color: black;
-}
-
-#buttonClear:hover{
-    background-color: white;
-    color: black;
-}
-
-#buttonPrint:focus{
-    border-radius: 20px;
-    outline: none;
-    background-color: white;
-    color: black;
-}
-
-#buttonClear:focus{
-    border-radius: 20px;
-    outline: none;
-    background-color: white;
-    color: black;
-}
 
 body{
     font-size: medium;
@@ -58,12 +10,4 @@ textarea{
     border-radius: 5px;
 }
 
-@media print {
-    #buttonPrint {
-        display :  none;
-    }
 
-    #buttonClear{
-        display: none;
-    }
-}

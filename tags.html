@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>OpsTech IT Tags</title>
-        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
         <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
     
 
     </head>
-    <body>
-        <h3>OpsTech IT Damage Tags</h3>
-        <div id="tag">
-            <form id="form">
-                <label for="fAssetTag">Asset Tag: </label><br>
-                <textarea rows="1" cols="" id="fAssetTag" name="fAssetTag" form="form"></textarea><br>
+    <body class="jumbotron">
+        <div class="container p-5 mt-5 w-50" style="border: solid black;">
+            <form>
+                <fieldset>
+                    <legend>OpsTech IT Damage Tags</legend>
+                    <div class="mb-3">
+                        <label for="assetNumber" class="form-label">Asset Tag:</label>
+                        <input type="text" id="assetNumber" class="form-control" placeholder="">
+                    </div> 
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Issue Description:</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nextSteps" class="form-label">Next Steps:</label>
+                        <textarea class="form-control" id="nextSteps" rows="3"></textarea>
+                    </div>
 
-                <label for="fDescription">Damage Description: </label><br>
-                <textarea rows="4" cols="32" id= "fDescription" name="fDescription" form="form"></textarea><br>
 
-                <label for="fNextStep">Next Steps: </label><br>
-                <textarea rows="4" cols="32" id="fNextStep" name="fNextStep" form="form"></textarea><br>
-            
-                <label>Memory wiped? </label>
-                    <input type="checkbox" id="fMemoryYes" name ="fMemoryYes" value="Yes">
-                    <label for="fMemoryYes">Yes</label>
-                    <input type="checkbox" id="fMemoryNo" name ="fMemoryNo" value="No">
-                    <label for="fMemoryNo">No</label>
-                    <input type="checkbox" id="fMemoryNA" name ="fMemoryNA" value="N/A">
-                    <label for="fMemoryNA">N/A</label>
+                    <label class="mb-1 d-flex">Damage?</label>
+                    <div class="btn-group mb-3 flex-wrap" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check" id="screen" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="screen">Screen</label>
+                    
+                        <input type="checkbox" class="btn-check" id="laser" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="laser">Laser</label>
+                    
+                        <input type="checkbox" class="btn-check" id="sound" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="sound">Sound</label>
+                            
+                        <input type="checkbox" class="btn-check" id="clip" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="clip">Battery Clip</label>
+                            
+                        <input type="checkbox" class="btn-check" id="chassi" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="chassi">Chassi</label>
+
+                        <input type="checkbox" class="btn-check" id="none" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="none">None</label>
+                    </div><br>
+
+
+
+                    <label class="d-flex">Memoy Wiped?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                        <label class="form-check-label" for="inlineRadio3">N/A</label>
+                    </div>
+
+                    <div>
+                        <label class="d-flex" id="sign"></label>
+                    </div>
+
+                </fieldset>
             </form>
-            <div>
-                <label id="sign"></label><br>
-            </div>
+      
+
         </div>
-        <br>
-        <input id = "buttonPrint" type="button" onclick="printForm('tag')" value="Print">
+
+        <div class="container d-flex w-50 justify-content-center">
+            <input id = "buttonPrint" class="btn btn-outline-primary px-5 m-3" type="button" onclick="printForm('tag')" value="Print">
+
         
-        <input id = "buttonClear" type="button" onclick="clearForm()" value="Clear">
+            <input id = "buttonClear" class="btn btn-outline-secondary px-5 m-3" type="button" onclick="clearForm()" value="Clear">
+        </div>
 
         <script>
             runTags();

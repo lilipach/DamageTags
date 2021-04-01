@@ -13,6 +13,16 @@ function runTags(){
         }
     });
 
+    
+    $('input:text').ready(function() {
+        $(window).keydown(function(event){
+          if(event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+          }
+        });
+      });
+
     //Sign Tag
     console.log(getDate());
     document.getElementById("sign").innerHTML = "Name: Liliana Pacheco <br>Date:  " + getDate();           
